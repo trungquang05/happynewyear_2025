@@ -1,3 +1,19 @@
+/* Hiệu ứng chữ nhấp nháy */
+@keyframes blinking-text {
+  0% {
+    color: #ff4444; /* Màu đỏ chính */
+    text-shadow: 0px 0px 8px rgba(255, 68, 68, 0.8); /* Hiệu ứng phát sáng */
+  }
+  50% {
+    color: #ff8888; /* Màu đỏ nhạt hơn */
+    text-shadow: 0px 0px 15px rgba(255, 136, 136, 0.6); /* Hiệu ứng mờ dần */
+  }
+  100% {
+    color: #ff4444; /* Quay lại màu đỏ chính */
+    text-shadow: 0px 0px 8px rgba(255, 68, 68, 0.8);
+  }
+}
+
 /* Phong cách cơ bản */
 #card {
   margin: 4%; /* Giảm margin để vừa màn hình nhỏ */
@@ -33,9 +49,9 @@ h4 {
   text-align: center;
   color: #ff4444;
   font-family: "Allura", cursive;
-  font-size: 14px; /* Font size nhỏ hơn cho màn hình nhỏ */
-  line-height: 1.4;
-  text-shadow: 0px 1px 2px rgba(255, 0, 0, 0.6); /* Giảm độ đậm của bóng */
+  font-size: 16px;
+  line-height: 1.5;
+  animation: blinking-text 1.5s infinite; /* Hiệu ứng nhấp nháy */
 }
 
 /* Hiệu ứng hiện thẻ */
@@ -60,12 +76,12 @@ h4 {
   }
 
   h4 {
-    font-size: 13px;
+    font-size: 14px;
     text-shadow: 0px 1px 1px rgba(255, 0, 0, 0.4);
+    animation: blinking-text 1.8s infinite; /* Chậm hơn cho màn hình nhỏ */
   }
 }
 
-/* Media Queries cho màn hình siêu nhỏ */
 @media (max-width: 480px) {
   #card {
     margin: 2%;
@@ -81,8 +97,9 @@ h4 {
   }
 
   h4 {
-    font-size: 12px;
+    font-size: 12px; /* Font size nhỏ hơn */
     line-height: 1.3;
     color: #ff5555;
+    animation: blinking-text 2s infinite; /* Hiệu ứng chậm hơn nữa */
   }
 }
