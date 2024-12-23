@@ -1,0 +1,89 @@
+/* Phong cách cơ bản */
+#card {
+  margin: 8%;
+  position: absolute;
+  height: auto;
+  width: 90%; /* Điều chỉnh để phù hợp màn hình nhỏ */
+  max-width: 350px;
+  border-radius: 10px;
+  background-color: white;
+  background-image: url("https://image.freepik.com/free-vector/open-gift-box-with-heart-shape-confetti-burst-explosion-3d-valentines-day-romantic-gift_165143-438.jpg");
+  background-size: cover;
+  box-shadow: 0px 0px 20px red;
+  transform: rotate(5deg);
+  top: 30px;
+  opacity: 0;
+  right: 200%;
+}
+
+.friend {
+  margin: auto;
+  padding: 5%;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 red;
+  width: 60px; /* Giảm kích thước cho màn hình nhỏ */
+  height: 60px;
+}
+
+h4 {
+  text-align: center;
+  -webkit-text-fill-color: rgba(0, 200, 200, 0.1);
+  -webkit-background-clip: text;
+  background-image: url("https://i.pinimg.com/originals/20/21/7f/20217f7fa2c9701b8128d8fb153a4db9.gif");
+  font-family: "Allura", cursive;
+  padding: 0; /* Loại bỏ padding âm */
+  font-size: 16px; /* Tăng kích thước chữ cho dễ đọc */
+  overflow: hidden;
+}
+
+.card-show {
+  opacity: 1 !important;
+  right: 0 !important;
+  transition: all 3s;
+}
+
+/* Media Queries cho thiết bị di động */
+@media (max-width: 768px) {
+  #card {
+    margin: 5%;
+    width: 95%; /* Chiếm gần hết chiều ngang màn hình */
+    max-width: 300px;
+    top: 20px;
+    transform: rotate(2deg); /* Giảm độ nghiêng cho màn hình nhỏ */
+    box-shadow: 0px 0px 10px red;
+  }
+
+  .friend {
+    width: 50px; /* Giảm thêm kích thước */
+    height: 50px;
+  }
+
+  h4 {
+    font-size: 14px; /* Giảm kích thước chữ cho vừa màn hình */
+    line-height: 1.4; /* Tăng khoảng cách dòng cho dễ đọc */
+  }
+}
+
+/* Media Queries cho màn hình siêu nhỏ */
+@media (max-width: 480px) {
+  #card {
+    margin: 3%;
+    width: 90%; /* Chiếm tối đa không gian */
+    max-width: 280px;
+    top: 10px;
+    transform: rotate(0deg); /* Bỏ xoay để phù hợp màn hình cực nhỏ */
+    box-shadow: 0px 0px 8px red;
+  }
+
+  .friend {
+    width: 45px; /* Thu nhỏ hơn nữa */
+    height: 45px;
+  }
+
+  h4 {
+    font-size: 12px; /* Giảm nhỏ kích thước chữ */
+    text-align: center;
+    padding: 0;
+  }
+}

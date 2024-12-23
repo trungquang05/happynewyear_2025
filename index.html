@@ -1,0 +1,87 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MÓN QUÀ NHỎ TẶNG CẬU😘</title>
+    <link rel="stylesheet" href="canvas.css" />
+    <link rel="stylesheet" href="QTNA.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="card.css" />
+  </head>
+  <body>
+    <div class="QTNA">
+      <canvas id="canvas"></canvas>
+      <section class="above-fold">
+        <!-- Điều khiển nhạc -->
+        <div>
+          <p>🎵 Tết 🎵</p>
+          <button onclick="toggleAudio('hpnw')">Phát/Dừng</button>
+          <audio id="hpnw" src="mot nam moi binh an.mp3"></audio>
+        </div>
+        <div>
+          <p>🎶 True Love 🎶</p>
+          <button onclick="toggleAudio('truelove')">Phát/Dừng</button>
+          <audio id="truelove" src="truelove.mp3"></audio>
+        </div>
+        <div>
+          <p>🎤 Bạn Đời 🎤</p>
+          <button onclick="toggleAudio('bandoi')">Phát/Dừng</button>
+          <audio id="bandoi" src="bạn đời.mp3"></audio>
+        </div>
+
+        <!-- Hộp quà -->
+        <div class="wrap-present">
+          <div class="present-box" id="present">
+            <div class="present">
+              <div class="img-wrap" id="present-image"></div>
+            </div>
+            <div class="side front"></div>
+            <div class="side back"></div>
+            <div class="side left"></div>
+            <div class="side right"></div>
+            <div class="side top">
+              <span class="to">
+                <span class="name" id="nametag"></span>
+              </span>
+            </div>
+            <div class="side bottom"></div>
+          </div>
+        </div>
+        <p class="info-text">Click to Open</p>
+      </section>
+
+      <!-- Thiệp chúc mừng -->
+      <div id="card">
+        <h4>💘zangnari💘</h4>
+        <img src="tg.png" class="friend" />
+        <h4>
+          HAPPY NEW YEAR GIANG-CHÚC CẬU MỘT NĂM MỚI AN THẬT NHIỀU SỨC KHOẺ, LUÔN
+          LUÔN VUI VẺ YÊU ĐỜI VÀ TẬN HƯỞNG CUỘC SỐNG 1 CÁCH TRỌN VẸN NHÉ 💕 ps:
+          đây là món quà nhỏ mà tớ hứa tặng cậu mong cậu hãy nhận và có 1 năm
+          mới vui vẻ, hạnh phúc bên gia đình và những người yêu thương nhé💝
+          <h5 style="text-align: center; color: rgb(0, 8, 255)">_trquang05_</h5>
+        </h4>
+      </div>
+    </div>
+  </body>
+  <script>
+    function toggleAudio(id) {
+      const audio = document.getElementById(id);
+
+      // Nếu đang phát thì dừng, nếu đang dừng thì phát
+      if (audio.paused) {
+        // Dừng tất cả các bài hát khác
+        document.querySelectorAll("audio").forEach((el) => {
+          el.pause();
+          el.currentTime = 0; // Reset thời gian
+        });
+
+        audio.play(); // Phát bài hát được chọn
+      } else {
+        audio.pause(); // Tạm dừng bài hát
+      }
+    }
+  </script>
+  <script src="canvas.js"></script>
+  <script src="QTNA.js"></script>
+</html>
