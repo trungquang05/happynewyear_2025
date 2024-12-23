@@ -1,19 +1,21 @@
 /* Phong cách cơ bản */
 #card {
-  margin: 8%;
+  margin: 5%;
   position: absolute;
   height: auto;
-  width: 90%; /* Điều chỉnh để phù hợp màn hình nhỏ */
-  max-width: 350px;
-  border-radius: 10px;
+  width: 90%; /* Chiếm phần lớn chiều ngang màn hình */
+  max-width: 320px; /* Giới hạn chiều rộng tối đa */
+  border-radius: 12px;
   background-color: white;
   background-image: url("https://image.freepik.com/free-vector/open-gift-box-with-heart-shape-confetti-burst-explosion-3d-valentines-day-romantic-gift_165143-438.jpg");
   background-size: cover;
-  box-shadow: 0px 0px 20px red;
-  transform: rotate(5deg);
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
+  transform: rotate(3deg);
   top: 30px;
   opacity: 0;
-  right: 200%;
+  right: -200%;
+  transition: all 1.5s ease;
 }
 
 .friend {
@@ -21,47 +23,45 @@
   padding: 5%;
   display: block;
   border-radius: 50%;
-  box-shadow: 0 4px 8px 0 red;
-  width: 60px; /* Giảm kích thước cho màn hình nhỏ */
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5);
+  width: 60px; 
   height: 60px;
+  object-fit: cover;
 }
 
 h4 {
   text-align: center;
-  -webkit-text-fill-color: rgba(0, 200, 200, 0.1);
-  -webkit-background-clip: text;
-  background-image: url("https://i.pinimg.com/originals/20/21/7f/20217f7fa2c9701b8128d8fb153a4db9.gif");
+  color: #ff4444;
   font-family: "Allura", cursive;
-  padding: 0; /* Loại bỏ padding âm */
-  font-size: 16px; /* Tăng kích thước chữ cho dễ đọc */
-  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.5;
+  text-shadow: 0px 1px 2px rgba(255, 0, 0, 0.7);
 }
 
+/* Hiệu ứng hiện thẻ */
 .card-show {
   opacity: 1 !important;
   right: 0 !important;
-  transition: all 3s;
 }
 
 /* Media Queries cho thiết bị di động */
 @media (max-width: 768px) {
   #card {
-    margin: 5%;
-    width: 95%; /* Chiếm gần hết chiều ngang màn hình */
+    margin: 4%;
+    width: 95%; 
     max-width: 300px;
-    top: 20px;
-    transform: rotate(2deg); /* Giảm độ nghiêng cho màn hình nhỏ */
-    box-shadow: 0px 0px 10px red;
+    transform: rotate(1deg); 
+    box-shadow: 0 3px 10px rgba(255, 0, 0, 0.5);
   }
 
   .friend {
-    width: 50px; /* Giảm thêm kích thước */
+    width: 50px;
     height: 50px;
   }
 
   h4 {
-    font-size: 14px; /* Giảm kích thước chữ cho vừa màn hình */
-    line-height: 1.4; /* Tăng khoảng cách dòng cho dễ đọc */
+    font-size: 14px;
+    text-shadow: 0px 1px 1px rgba(255, 0, 0, 0.5);
   }
 }
 
@@ -69,21 +69,20 @@ h4 {
 @media (max-width: 480px) {
   #card {
     margin: 3%;
-    width: 90%; /* Chiếm tối đa không gian */
-    max-width: 280px;
-    top: 10px;
-    transform: rotate(0deg); /* Bỏ xoay để phù hợp màn hình cực nhỏ */
-    box-shadow: 0px 0px 8px red;
+    width: 95%;
+    max-width: 260px;
+    transform: none; /* Không xoay trên màn hình rất nhỏ */
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.4);
   }
 
   .friend {
-    width: 45px; /* Thu nhỏ hơn nữa */
+    width: 45px; 
     height: 45px;
   }
 
   h4 {
-    font-size: 12px; /* Giảm nhỏ kích thước chữ */
-    text-align: center;
-    padding: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #ff5555;
   }
 }
